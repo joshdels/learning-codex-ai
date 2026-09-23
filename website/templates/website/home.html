@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home | TopMap Solutions{% endblock %}
+
+{% block content %}
+<section class="hero" aria-labelledby="hero-title">
+    <p class="hero-eyebrow">CAD-to-GIS &amp; parcel mapping</p>
+    <h1 id="hero-title">TopMap Solutions</h1>
+    <p class="hero-description">We turn CAD drawings into GIS data and create clear parcel maps to help you organize, understand, and use your land information.</p>
+    <a class="button" href="{% url 'website:about' %}">Learn about TopMap</a>
+</section>
+{% endblock %}

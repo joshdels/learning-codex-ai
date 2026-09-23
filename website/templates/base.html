@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}TopMap Solutions{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <a class="brand" href="{% url 'website:home' %}">TopMap Solutions</a>
+        <nav aria-label="Main navigation">
+            <a href="{% url 'website:home' %}"{% if request.resolver_match.url_name == 'home' %} aria-current="page"{% endif %}>Home</a>
+            <a href="{% url 'website:about' %}"{% if request.resolver_match.url_name == 'about' %} aria-current="page"{% endif %}>About</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>&copy; {% now "Y" %} TopMap Solutions</footer>
+</body>
+</html>
