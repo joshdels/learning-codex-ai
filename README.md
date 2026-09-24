@@ -79,5 +79,20 @@ make run
 
 - `config/`: Project URLs and WSGI/ASGI entry points.
 - `config/settings/`: Shared, local, and production settings.
-- `website/`: Page views, URLs, templates, and static CSS.
-- `website/templates/base.html`: Shared page layout and navigation.
+- `apps/`: Django application packages.
+- `apps/website/`: Page views, URLs, tests, templates, and static CSS.
+- `apps/website/templates/base.html`: Shared page layout and navigation.
+
+### Suggested structure follow-ups
+
+- Clarify the root `AGENTS.md` tree so future apps, such as `accounts`, belong
+  under `apps/`, not `config/`, matching `apps/AGENTS.md`.
+- Standardize the production settings name: the current module is `prod.py`,
+  while the instructions specify `production.py`. A rename should update the
+  entry points, documentation, and deployment environment together.
+- Move the shared base template to root `templates/base.html` and register
+  that directory in `TEMPLATES[0]["DIRS"]`.
+- Move site-wide CSS to root `static/css/` and register root `static/` in
+  `STATICFILES_DIRS`, updating the template's stylesheet reference. Keep
+  app-specific templates and assets namespaced inside each app.
+- Create `components/`, `js/`, and `images/` only when they have content.

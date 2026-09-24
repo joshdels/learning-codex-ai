@@ -8,7 +8,7 @@ SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
-    "website.apps.WebsiteConfig",
+    "apps.website.apps.WebsiteConfig",
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
